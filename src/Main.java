@@ -1,17 +1,35 @@
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
+import  java.util.Scanner;
 public class Main {
+    public static void bubbleSort(int size,int[] arr){
+        for (int i=0;i<size;i++){
+            for (int j=0;j<size-1;j++){
+                if(arr[j]>arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter n : ");
+        int n = s.nextInt();
+        int[] arr = new int[n];
+        for (int i=0;i<n;i++){
+            System.out.print("array["+(i+1)+"] : ");
+            arr[i] = s.nextInt();
+        }
+        System.out.print("Input : ");
+        for (int i=0;i<n;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println("\n**Bubble Sort**");
+        bubbleSort(n,arr);
+        for (int i=0;i<n;i++){
+            System.out.println(arr[i]);
         }
     }
 }
